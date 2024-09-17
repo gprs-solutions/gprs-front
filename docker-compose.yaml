@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  front:
+    container_name: gprs.front
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "3020:3000"
+    command: npm run nuxt dev
