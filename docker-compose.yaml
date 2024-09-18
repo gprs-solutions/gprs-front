@@ -9,5 +9,4 @@ services:
     volumes:
       - .:/var/www/html
     ports:
-      - "3020:3000"
-    command: npm run nuxt dev
+      - "3000:3000"

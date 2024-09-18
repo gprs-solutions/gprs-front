@@ -13,13 +13,16 @@ RUN npm cache clean --force
 RUN npm config set registry https://registry.npmjs.org/
 
 # Copy the package.json and package-lock.json
-COPY package.json ./
+COPY . .
+
+RUN rm -rf ./node_modules
+RUN rm -rf ./package-lock.json
 
 # Install dependencies
-RUN npm install
+RUN npm i
 
 # Expose the port Nuxt.js runs on
-EXPOSE 3020
+EXPOSE 3000
 
 # Start the Nuxt.js app
 CMD ["npm", "run", "dev"]
