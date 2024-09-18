@@ -1,10 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
-  css: ['vuetify/lib/styles/main.sass','@mdi/font/css/materialdesignicons.css','~/assets/css/main.css'],
+  build: {
+    transpile: ['vuetify'],
+  },
+  css: [
+    'vuetify/lib/styles/main.sass',
+    '@mdi/font/css/materialdesignicons.css',
+    "~/assets/scss/main.scss"
+  ],
   ssr: false,
+  plugins: ['~/plugins/vuetify.js'],
   app: {
     head: {
       title: 'GPRS Website',
