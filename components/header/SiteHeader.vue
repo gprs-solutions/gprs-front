@@ -65,8 +65,16 @@ onUnmounted(() => {
 
       <div id="icons" class="d-flex align-center">
         <MenuLang class="mt-1"></MenuLang>
-        <v-icon :icon="icon" @click="toggleTheme"></v-icon>
-        <v-icon icon="mdi-github" @click="redirectToGit"></v-icon>
+        <v-icon
+          :icon="icon"
+          @click="toggleTheme"
+          aria-label="Toggle Theme"
+        ></v-icon>
+        <v-icon
+          icon="mdi-github"
+          @click="redirectToGit"
+          aria-label="GitHub Profile"
+        ></v-icon>
       </div>
     </v-app-bar>
 
@@ -75,8 +83,16 @@ onUnmounted(() => {
       <v-list class="mt-2 mx-5">
         <v-list-item>
           <div id="icons" class="d-flex">
-            <v-icon :icon="icon" @click="toggleTheme"></v-icon>
-            <v-icon icon="mdi-github" @click="redirectToGit"></v-icon>
+            <v-icon
+              :icon="icon"
+              @click="toggleTheme"
+              aria-label="Toggle Theme"
+            ></v-icon>
+            <v-icon
+              icon="mdi-github"
+              @click="redirectToGit"
+              aria-label="GitHub Profile"
+            ></v-icon>
           </div>
         </v-list-item>
       </v-list>
