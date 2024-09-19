@@ -44,56 +44,35 @@ onUnmounted(() => {
 
 <template>
   <header id="header">
-    <v-app-bar class="pr-3" flat app>
+    <v-app-bar class="px-3" flat app>
       <v-app-bar-nav-icon v-if="isMobile" @click="drawer = !drawer" />
       <div v-else class="d-flex align-center">
-        <v-btn text href="/">Home</v-btn>
+        <v-btn text href="/">{{ $t("Home") }}</v-btn>
 
         <v-menu offset-y>
           <template v-slot:activator="{ props }">
             <v-btn text v-bind="props" append-icon="mdi-menu-down">
-              About me
+              {{ $t("AboutMe") }}
             </v-btn>
           </template>
-          <v-list>
-            <v-list-item>
-              <v-list-item-title>Experiences</v-list-item-title>
-            </v-list-item>
-          </v-list>
+          <MenuList></MenuList>
         </v-menu>
 
-        <v-btn text href="/contact">Contact</v-btn>
+        <v-btn text href="/contact">{{ $t("Contact") }}</v-btn>
       </div>
 
       <v-spacer></v-spacer>
 
-      <div id="icons" class="d-flex">
+      <div id="icons" class="d-flex align-center">
+        <MenuLang class="mt-1"></MenuLang>
         <v-icon :icon="icon" @click="toggleTheme"></v-icon>
         <v-icon icon="mdi-github" @click="redirectToGit"></v-icon>
       </div>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app temporary>
-      <v-list>
-        <v-list-item link href="/">
-          <v-list-item-title>Home</v-list-item-title>
-        </v-list-item>
-        <v-divider></v-divider>
-        <v-list-item>
-          <v-list-item-title>Experiences</v-list-item-title>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-title>Skills</v-list-item-title>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-title>Certifications</v-list-item-title>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-title>Projects</v-list-item-title>
-        </v-list-item>
-        <v-list-item link href="/contact">
-          <v-list-item-title>Contact</v-list-item-title>
-        </v-list-item>
+      <MenuList></MenuList>
+      <v-list class="mt-2 mx-5">
         <v-list-item>
           <div id="icons" class="d-flex">
             <v-icon :icon="icon" @click="toggleTheme"></v-icon>

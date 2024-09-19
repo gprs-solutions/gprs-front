@@ -4,7 +4,7 @@ li {
 
 #header{    
     a,button{
-        text-transform: capitalize;
+        text-transform: initial;
 
         span{
             margin: 0;
@@ -13,5 +13,9 @@ li {
 
     #icons{
         column-gap: 16px;
+
+        .menu-lang{
+            max-height: 30px;
+        }
     }
 }
