@@ -2,6 +2,10 @@ li {
     list-style: none;
 }
 
+.container{
+    height: 100vh;
+}
+
 #header{    
     a,button{
         text-transform: initial;
@@ -18,4 +22,42 @@ li {
             max-height: 30px;
         }
     }
+}
+
+#hero{
+    .hero-row{
+        @media screen and (max-width: 600px) {
+            flex-direction: column-reverse;
+        }
+
+        .hero-text-container {
+            @media screen and (max-width: 600px) {
+                text-align: center;
+            }
+
+            .hero-text {
+                font-size: 72px;
+
+                @media screen and (max-width: 600px) {
+                    font-size: 42px;
+                }
+            }
+        }
+
+        .hero-img {
+            @media screen and (max-width: 600px) {
+                max-width: 300px !important;
+            }
+        }
+
+        .resume-btn {
+            text-transform: capitalize;
+            font-weight: bold;
+
+            @media screen and (max-width: 600px) {
+                margin: 0 auto;
+            }
+        }
+    }
+    
 }

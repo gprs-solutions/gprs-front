@@ -1,8 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
-
 <template>
   <main>
     <SiteHeader></SiteHeader>
-    <slot />
+    <v-container class="container">
+      <slot />
+    </v-container>
   </main>
 </template>
