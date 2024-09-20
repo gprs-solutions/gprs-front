@@ -25,12 +25,35 @@ li {
 }
 
 #hero{
-    .hero-text{
-        font-size: 42px;
-    }
+    .hero-row{
+        @media screen and (max-width: 600px) {
+            flex-direction: column-reverse;
+        }
 
-    .resume-btn{
-        text-transform: capitalize;
-        font-weight: bold;
+        .hero-text-container {
+            @media screen and (max-width: 600px) {
+                text-align: center;
+            }
+
+            .hero-text {
+                font-size: 42px;
+            }
+        }
+
+        .hero-img {
+            @media screen and (max-width: 600px) {
+                max-width: 300px !important;
+            }
+        }
+
+        .resume-btn {
+            text-transform: capitalize;
+            font-weight: bold;
+
+            @media screen and (max-width: 600px) {
+                margin: 0 auto;
+            }
+        }
     }
+    
 }

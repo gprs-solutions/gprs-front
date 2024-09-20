@@ -4,7 +4,7 @@ const lang = ref(locale.value);
 
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
-const heroTexts = [t("FrontEnd"), t("BackEnd"), t("FullStack")];
+const heroTexts = [t("FrontEnd"), t("BackEnd"), "DevOps", t("FullStack")];
 let activeHeroText = ref("");
 let defaultTypingTime = 150;
 
