@@ -2,6 +2,10 @@ li {
     list-style: none;
 }
 
+.container{
+    height: 100vh;
+}
+
 #header{    
     a,button{
         text-transform: initial;
@@ -17,5 +21,16 @@ li {
         .menu-lang{
             max-height: 30px;
         }
+    }
+}
+
+#hero{
+    .hero-text{
+        font-size: 42px;
+    }
+
+    .resume-btn{
+        text-transform: capitalize;
+        font-weight: bold;
     }
 }

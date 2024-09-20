@@ -1,9 +1,14 @@
 {
     "AboutMe": "About me",
+    "BackEnd": "BackEnd",
     "Certifications": "Certifications",
     "Contact": "Contact",
+    "Developer": "Developer",
+    "FrontEnd": "FrontEnd",
+    "FullStack": "FullStack",
     "Experiences": "Experiences",
     "Home": "Home",
     "Projects": "Projects",
+    "Resume": "Resume",
     "Skills": "Skills"
 }

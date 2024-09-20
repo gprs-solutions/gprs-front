@@ -26,6 +26,13 @@ const redirectToGit = () => {
   window.open("https://github.com/GuilhermePereiraRibeirodaSilva", "_blank");
 };
 
+const redirectToLinkedIn = () => {
+  window.open(
+    "https://www.linkedin.com/in/guilherme-pereira-5097b31a2/",
+    "_blank"
+  );
+};
+
 const handleResize = () => {
   windowWidth.value = window.innerWidth;
 };
@@ -71,6 +78,11 @@ onUnmounted(() => {
           aria-label="Toggle Theme"
         ></v-icon>
         <v-icon
+          icon="mdi-linkedin"
+          @click="redirectToLinkedIn"
+          aria-label="LinkedIn Profile"
+        ></v-icon>
+        <v-icon
           icon="mdi-github"
           @click="redirectToGit"
           aria-label="GitHub Profile"
@@ -87,6 +99,11 @@ onUnmounted(() => {
               :icon="icon"
               @click="toggleTheme"
               aria-label="Toggle Theme"
+            ></v-icon>
+            <v-icon
+              icon="mdi-linkedin"
+              @click="redirectToLinkedIn"
+              aria-label="LinkedIn Profile"
             ></v-icon>
             <v-icon
               icon="mdi-github"
