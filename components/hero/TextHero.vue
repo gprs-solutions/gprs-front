@@ -1,5 +1,5 @@
 <script setup>
-const { locale, setLocale } = useI18n();
+const { locale } = useI18n();
 const lang = ref(locale.value);
 
 import { useI18n } from "vue-i18n";
