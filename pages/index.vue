@@ -1,4 +1,6 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <Hero></Hero>
+  <div>
+    <Hero></Hero>
+    <Experiences></Experiences>
+  </div>
 </template>

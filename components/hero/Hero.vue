@@ -8,7 +8,7 @@ const activeResume = ref(locale.value === "en" ? en : pt);
 </script>
 
 <template>
-  <section id="hero" class="d-flex align-center h-100">
+  <section id="hero" class="d-flex align-center">
     <v-row class="hero-row">
       <v-col
         cols="12"

@@ -2,10 +2,6 @@ li {
     list-style: none;
 }
 
-.container{
-    height: 100vh;
-}
-
 #header{    
     a,button{
         text-transform: initial;
@@ -25,6 +21,8 @@ li {
 }
 
 #hero{
+    height: 100vh;
+    
     .hero-row{
         @media screen and (max-width: 960px) {
             flex-direction: column-reverse;
@@ -68,4 +66,35 @@ li {
         }
     }
     
+}
+
+#experiences{
+    .experiences-timeline{
+        margin-right: 5%;
+
+        .v-timeline-item {
+            cursor: pointer;
+        }
+
+        .v-timeline-divider{
+            height: 200px;
+        }
+    }
+    .experiences-details {
+        margin-left: 5%;
+
+        .experiences-details-card{
+            animation: fadeIn 1s forwards;
+            @keyframes fadeIn {
+                from{ 
+                    opacity: 0;
+                    transform: translateX(-50px);
+                }
+                to{
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
 }
