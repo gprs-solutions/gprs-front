@@ -11,13 +11,9 @@ onBeforeMount(() => {
 
 <template>
   <section id="experiences">
-    <v-row>
-      <v-col class="d-flex justify-end experiences-timeline">
-        <Timeline></Timeline>
-      </v-col>
-      <v-col class="d-flex justify-start experiences-details">
-        <Details></Details>
-      </v-col>
-    </v-row>
+    <div class="title">
+      <h2>{{ $t("Experiences") }}</h2>
+    </div>
+    <ExpDetails></ExpDetails>
   </section>
 </template>

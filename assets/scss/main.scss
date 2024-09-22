@@ -2,6 +2,19 @@ li {
     list-style: none;
 }
 
+section{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .title{
+        margin-bottom: 40px;
+    }
+}
+
+h2{
+    font-size: 32px;
+}
+
 #header{    
     a,button{
         text-transform: initial;
@@ -69,32 +82,7 @@ li {
 }
 
 #experiences{
-    .experiences-timeline{
-        margin-right: 5%;
-
-        .v-timeline-item {
-            cursor: pointer;
-        }
-
-        .v-timeline-divider{
-            height: 200px;
-        }
-    }
-    .experiences-details {
-        margin-left: 5%;
-
-        .experiences-details-card{
-            animation: fadeIn 1s forwards;
-            @keyframes fadeIn {
-                from{ 
-                    opacity: 0;
-                    transform: translateX(-50px);
-                }
-                to{
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-            }
-        }
+    .v-list-item-title{
+        white-space: wrap;
     }
 }
