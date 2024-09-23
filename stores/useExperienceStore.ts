@@ -11,6 +11,20 @@ export const useExperienceStore = defineStore("experiences", {
   },
   actions: {
     async fetchExps() {
+      try {
+        const { data, error } = await useFetch(
+          "http://localhost:8030/api/exp/1"
+        );
+
+        if (error.value) {
+          throw new Error(error.value.message);
+        }
+
+        // Save the fetched data into Pinia state
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
       //here we will soon retrive the xp from backend using axios. For now we will mock it.
       const exps = [
         {
