@@ -3,6 +3,8 @@ import { defineStore } from "pinia";
 export const useExperienceStore = defineStore("experiences", {
   state: () => ({
     exps: [],
+    start: "",
+    end: "",
     success: false,
   }),
   getters: {
@@ -22,6 +24,7 @@ export const useExperienceStore = defineStore("experiences", {
 
         this.success = true;
         this.exps = result.data;
+        console.log(this.exps);
       } catch (err) {
         this.success = false;
         this.exps = [];

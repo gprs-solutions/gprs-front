@@ -16,6 +16,10 @@
 
                 .dynamicText{
                     min-height: 88px;
+
+                    @media screen and (max-width: 600px) {
+                        min-height: 64px;
+                    }
                 }
 
                 .name {
