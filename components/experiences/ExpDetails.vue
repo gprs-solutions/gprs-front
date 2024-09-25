@@ -23,9 +23,13 @@ onMounted(() => {
   experienceStore.fetchExps();
 });
 
+console.log(
+  experienceStore.exps[0].descriptions,
+  lang.value.toLocaleUpperCase()
+);
 const sanitizedExps = computed(() => {
   return experienceStore.exps.map((exp) => ({
-    title: exp.descriptions[lang.value].name,
+    title: exp.descriptions[lang.value.toLocaleUpperCase()].name,
     logo: exp.image,
     children: [
       {
@@ -34,7 +38,7 @@ const sanitizedExps = computed(() => {
       },
       {
         title: "Responsibilities",
-        children: exp.descriptions[lang.value].description
+        children: exp.descriptions[lang.value.toLocaleUpperCase()].description
           .split("<br/>")
           .map((responsibility, index) => ({
             title: responsibility.trim(),
