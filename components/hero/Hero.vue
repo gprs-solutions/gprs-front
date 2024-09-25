@@ -38,7 +38,12 @@ const activeResume = ref(locale.value === "en" ? en : pt);
         md="6"
         class="d-flex justify-center align-center"
       >
-        <v-img class="hero-img" :src="heroImg" max-width="400"></v-img>
+        <v-img
+          class="hero-img"
+          :src="heroImg"
+          max-width="400"
+          lazy-src=""
+        ></v-img>
       </v-col>
     </v-row>
   </section>

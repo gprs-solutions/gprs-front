@@ -1,0 +1,18 @@
+#header {
+    a,
+    button {
+        text-transform: initial;
+
+        span {
+            margin: 0;
+        }
+    }
+
+    #icons {
+        column-gap: 16px;
+
+        .menu-lang {
+            max-height: 30px;
+        }
+    }
+}

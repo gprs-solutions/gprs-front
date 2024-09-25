@@ -23,10 +23,6 @@ onMounted(() => {
   experienceStore.fetchExps();
 });
 
-console.log(
-  experienceStore.exps[0].descriptions,
-  lang.value.toLocaleUpperCase()
-);
 const sanitizedExps = computed(() => {
   return experienceStore.exps.map((exp) => ({
     title: exp.descriptions[lang.value.toLocaleUpperCase()].name,

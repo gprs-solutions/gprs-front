@@ -22,9 +22,7 @@ export const useExperienceStore = defineStore("experiences", {
 
         this.success = true;
         this.exps = result.data;
-        console.log(this.exps);
       } catch (err) {
-        console.log(err);
         this.success = false;
         this.exps = [];
       }

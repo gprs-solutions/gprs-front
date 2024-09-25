@@ -1,3 +1,12 @@
+@import 'globals/animations';
+@import 'sections/header';
+@import 'sections/hero';
+@import 'sections/presentation';
+
+html{
+    scroll-behavior: smooth;
+}
+
 li {
     list-style: none;
 }
@@ -15,74 +24,5 @@ h2{
     font-size: 32px;
 }
 
-#header{    
-    a,button{
-        text-transform: initial;
 
-        span{
-            margin: 0;
-        }
-    }
 
-    #icons{
-        column-gap: 16px;
-
-        .menu-lang{
-            max-height: 30px;
-        }
-    }
-}
-
-#hero{
-    height: 100vh;
-    
-    .hero-row{
-        @media screen and (max-width: 960px) {
-            flex-direction: column-reverse;
-        }
-
-        .hero-text-container {
-            @media screen and (max-width: 960px) {
-                text-align: center;
-            }
-
-            .hero-text {
-                font-size: 56px;
-
-                .name{
-                    font-size: 40px;
-
-                    @media screen and (max-width: 600px) {
-                        font-size: 24px;
-                    }
-                }
-
-                @media screen and (max-width: 600px) {
-                    font-size: 40px;
-                }
-            }
-        }
-
-        .hero-img {
-            @media screen and (max-width: 600px) {
-                max-width: 300px !important;
-            }
-        }
-
-        .resume-btn {
-            text-transform: capitalize;
-            font-weight: bold;
-
-            @media screen and (max-width: 960px) {
-                margin: 0 auto;
-            }
-        }
-    }
-    
-}
-
-#experiences{
-    .v-list-item-title{
-        white-space: wrap;
-    }
-}

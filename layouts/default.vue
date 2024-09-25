@@ -2,7 +2,7 @@
 <template>
   <main>
     <SiteHeader></SiteHeader>
-    <v-container class="container">
+    <v-container class="container pb-0 pt-0">
       <slot />
     </v-container>
   </main>

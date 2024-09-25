@@ -6,12 +6,11 @@ const isSuccessful = computed(() => {
 });
 onBeforeMount(async () => {
   await experienceStore.fetchExps();
-  console.log(isSuccessful.value);
 });
 </script>
 
 <template>
-  <section id="experiences" v-if="isSuccessful">
+  <section id="experiences" v-if="isSuccessful && false">
     <div class="title">
       <h2>{{ $t("Experiences") }}</h2>
     </div>
