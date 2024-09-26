@@ -3,7 +3,7 @@ import { useExperienceStore } from "~/stores/useExperienceStore";
 import { createObserver } from "@/utils/intersectionObserver";
 import { convertDateFormat } from "@/utils/date";
 
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 const lang = locale;
 
 const expTitle = ref(null);
@@ -36,8 +36,7 @@ onUnmounted(() => {
 //Helper functions.
 const filterDescription = (exp) => {
   try {
-    const description =
-      exp.descriptions[lang.value.toUpperCase()]?.description ?? undefined;
+    const description = exp.descriptions[lang.value]?.description ?? undefined;
     if (description !== undefined) {
       return description;
     }
@@ -49,12 +48,12 @@ const filterDescription = (exp) => {
 };
 
 const parseDescriptions = (descriptions) => {
-  return descriptions.split("<br/>");
+  return descriptions.split("<br/>").slice(0, -1);
 };
 
 const filterName = (exp) => {
   try {
-    const name = exp.descriptions[lang.value.toUpperCase()]?.name ?? undefined;
+    const name = exp.descriptions[lang.value]?.name ?? undefined;
     if (name !== undefined) {
       return name;
     }
@@ -70,6 +69,10 @@ const parseDate = (date) => {
     if (date !== undefined) {
       const result = convertDateFormat(date);
 
+      if (result === "") {
+        return t("Currently");
+      }
+
       if (result) {
         return result;
       }
@@ -77,7 +80,7 @@ const parseDate = (date) => {
 
     throw new Error();
   } catch (err) {
-    return "";
+    return false;
   }
 };
 </script>
@@ -105,7 +108,7 @@ const parseDate = (date) => {
           <v-card
             v-if="filterDescription(exp) && filterName(exp)"
             :class="['ma-4']"
-            color="grey-lighten-3"
+            color="white"
             height="400"
             @click="toggle"
           >
@@ -113,22 +116,21 @@ const parseDate = (date) => {
               <div class="card-content">
                 <v-card-title class="d-flex justify-center">
                   <div class="title-content">
-                    <v-avatar
-                      image="https://cryptouk.io/wp-content/uploads/2021/06/logo-lexis-nexis-risk-900x450@1x.png"
-                      size="100"
-                      circle
-                    ></v-avatar>
+                    <v-avatar :image="exp.image" size="100" circle></v-avatar>
                     <h3 class="text-center mt-3">
                       {{ filterName(exp) }}
                     </h3>
                   </div>
                 </v-card-title>
-                <v-card-subtitle>
-                  {{ parseDate(exp.start) }} - {{ parseDate(exp.end) }}
+                <v-card-subtitle class="text-center">
+                  {{ parseDate(exp.start) }} -
+                  {{ parseDate(exp.end) }}
                 </v-card-subtitle>
 
-                <v-card-text class="card-text">
-                  <h4 class="text-bold mb-2">Responsabilities:</h4>
+                <v-card-text class="pb-0 pl-2">
+                  <h4 class="text-bold">Responsabilities:</h4>
+                </v-card-text>
+                <v-card-text class="card-text pt-0 mt-2">
                   <ul>
                     <li
                       v-for="(line, idx) in parseDescriptions(
