@@ -3,9 +3,9 @@ import { onMounted, onUnmounted } from 'vue';
 export const createObserver = (elementRefs, visibilityRefs) => {
   let observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (Array.isArray(elementRefs)) {
+      if (Array.isArray(elementRefs.value)) {
         // Handle multiple refs case
-        const index = elementRefs.findIndex(el => el.value === entry.target);
+        const index = elementRefs.value.findIndex(el => el.value === entry.target)
         if (index !== -1) {
           visibilityRefs[index].value = entry.isIntersecting;
         }
@@ -19,9 +19,9 @@ export const createObserver = (elementRefs, visibilityRefs) => {
   });
 
   onMounted(() => {
-    if (Array.isArray(elementRefs)) {
+    if (Array.isArray(elementRefs.value)) {
       // Observe multiple refs
-      elementRefs.forEach((elementRef) => {
+      elementRefs.value.forEach((elementRef) => {
         if (elementRef.value) observer.observe(elementRef.value);
       });
     } else {

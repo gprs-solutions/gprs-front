@@ -13,6 +13,13 @@ const expTitleClass = computed(() =>
 );
 createObserver(expTitle, isExpTitleVisible);
 
+const expCards = ref(null);
+const isExpCardsVisible = ref(false);
+const expCardsClass = computed(() =>
+  isExpCardsVisible.value ? "fadeInTop" : ""
+);
+createObserver(expCards, isExpCardsVisible);
+
 const experienceStore = useExperienceStore();
 const isSuccessful = computed(() => experienceStore.isSuccessful);
 
@@ -94,7 +101,7 @@ const parseDate = (date) => {
       <h2>{{ $t("MyWorkExperiences") }}</h2>
     </div>
 
-    <div class="content">
+    <div :class="['content', expCardsClass]" ref="expCards">
       <v-slide-group
         v-if="isSuccessful && experienceStore.exps.length > 0"
         class="pa-4"

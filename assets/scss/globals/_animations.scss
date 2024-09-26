@@ -31,11 +31,27 @@
 }
 
 .fadeInTop {
-    animation: fadeInRight 500ms forwards;
+    animation: fadeInTop 500ms forwards;
 
-    @keyframes fadeInRight {
+    @keyframes fadeInTop {
         from {
             transform: translateY(-100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+.fadeInBottom {
+    animation: fadeInBottom 500ms forwards;
+
+    @keyframes fadeInBottom {
+        from {
+            transform: translateY(100px);
             opacity: 0;
         }
 

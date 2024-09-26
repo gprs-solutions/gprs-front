@@ -9,7 +9,8 @@
         justify-content: center;
 
         .v-card {
-            width: 50vw;
+            width: max-content;
+            max-width: 1vw;
             min-width: 300px;
         }
     }
