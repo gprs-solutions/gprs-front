@@ -17,7 +17,7 @@
                 .dynamicText{
                     min-height: 88px;
 
-                    @media screen and (max-width: 600px) {
+                    @media screen and (max-width: 960px) {
                         min-height: 64px;
                     }
                 }
@@ -25,19 +25,19 @@
                 .name {
                     font-size: 40px;
 
-                    @media screen and (max-width: 600px) {
+                    @media screen and (max-width: 960px) {
                         font-size: 24px;
                     }
                 }
 
-                @media screen and (max-width: 600px) {
+                @media screen and (max-width: 960px) {
                     font-size: 40px;
                 }
             }
         }
 
         .hero-img {
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width: 960px) {
                 max-width: 300px !important;
             }
         }
