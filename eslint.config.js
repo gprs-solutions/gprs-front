@@ -27,10 +27,13 @@ export default [
         onMounted: "readonly",
         watch: "readonly",
         useI18n: "readonly",
+        onBeforeMount: "readonly",
+        onUnmounted: "readonly"
       },
     },
     rules: {
       "vue/multi-word-component-names": "off", 
+      "@typescript-eslint/no-unused-vars": "off"
     },
   },
 ];
