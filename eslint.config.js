@@ -27,8 +27,8 @@ export default [
         onMounted: "readonly",
         watch: "readonly",
         useI18n: "readonly",
-        "onBeforeMount": "readonly",
-        "onUnmounted": "readonly"
+        onBeforeMount: "readonly",
+        onUnmounted: "readonly"
       },
     },
     rules: {
