@@ -49,13 +49,18 @@ onMounted(() => {
 
 <template>
   <h1 class="hero-text">
+    <div class="name">Guilherme Pereira,</div>
     <div v-if="lang === 'en'">
-      <div>{{ activeHeroText }}<span v-if="blinkingCursor">|</span></div>
+      <div class="dynamicText">
+        {{ activeHeroText }}<span v-if="blinkingCursor">|</span>
+      </div>
       <div>{{ $t("Developer") }}</div>
     </div>
     <div v-else>
       <div>{{ $t("Developer") }}</div>
-      <div>{{ activeHeroText }}<span v-if="blinkingCursor">|</span></div>
+      <div class="dynamicText">
+        {{ activeHeroText }}<span v-if="blinkingCursor">|</span>
+      </div>
     </div>
   </h1>
 </template>

@@ -1,5 +1,5 @@
 import { createVuetify } from 'vuetify'
-import '@mdi/font/css/materialdesignicons.css' // Ensure MDI icons are available
+import '@mdi/font/css/materialdesignicons.css' 
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
@@ -12,19 +12,17 @@ export default defineNuxtPlugin((nuxtApp) => {
       themes: {
         light: {
           colors: {
-            primary: '#1da1f2',
-            secondary: '#14171a',
+            primary: '#f5f5dc',
           },
         },
         dark: {
           colors: {
-            primary: '#181818',
+            primary: '#6E07F3',
           },
         },
       },
     },
   })
 
-  // Inject Vuetify into the Vue app instance
   nuxtApp.vueApp.use(vuetify)
 })

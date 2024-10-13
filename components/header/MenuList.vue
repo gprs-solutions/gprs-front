@@ -1,6 +1,6 @@
 <template>
   <v-list class="mt-2 mx-5">
-    <v-list-item>
+    <v-list-item link href="#experiences">
       <v-list-item-title>{{ $t("Experiences") }}</v-list-item-title>
     </v-list-item>
     <v-list-item>

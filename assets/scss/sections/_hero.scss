@@ -1,0 +1,54 @@
+#hero {
+    height: 100vh;
+
+    .hero-row {
+        @media screen and (max-width: 960px) {
+            flex-direction: column-reverse;
+        }
+
+        .hero-text-container {
+            @media screen and (max-width: 960px) {
+                text-align: center;
+            }
+
+            .hero-text {
+                font-size: 56px;
+
+                .dynamicText{
+                    min-height: 88px;
+
+                    @media screen and (max-width: 960px) {
+                        min-height: 64px;
+                    }
+                }
+
+                .name {
+                    font-size: 40px;
+
+                    @media screen and (max-width: 960px) {
+                        font-size: 24px;
+                    }
+                }
+
+                @media screen and (max-width: 960px) {
+                    font-size: 40px;
+                }
+            }
+        }
+
+        .hero-img {
+            @media screen and (max-width: 960px) {
+                max-width: 300px !important;
+            }
+        }
+
+        .resume-btn {
+            text-transform: capitalize;
+            font-weight: bold;
+
+            @media screen and (max-width: 960px) {
+                margin: 0 auto;
+            }
+        }
+    }
+}
