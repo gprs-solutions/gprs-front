@@ -1,5 +1,6 @@
 <script setup>
 import { useProjectStore } from "~/stores/useProjectStore";
+import { createObserver } from "@/utils/intersectionObserver";
 
 const { locale, t } = useI18n();
 const lang = locale;
