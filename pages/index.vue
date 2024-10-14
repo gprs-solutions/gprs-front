@@ -5,5 +5,6 @@
       <Presentation></Presentation>
       <Experiences></Experiences>
     </div>
+    <Projects></Projects>
   </div>
 </template>
