@@ -3,7 +3,7 @@
     <v-list-item link href="#experiences">
       <v-list-item-title>{{ $t("Experiences") }}</v-list-item-title>
     </v-list-item>
-    <v-list-item>
+    <v-list-item link href="#skills">
       <v-list-item-title>{{ $t("Skills") }}</v-list-item-title>
     </v-list-item>
     <v-list-item>

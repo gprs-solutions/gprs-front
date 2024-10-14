@@ -6,5 +6,6 @@
       <Experiences></Experiences>
     </div>
     <Projects></Projects>
+    <Skills></Skills>
   </div>
 </template>
