@@ -9,7 +9,7 @@
     <v-list-item>
       <v-list-item-title>{{ $t("Certifications") }}</v-list-item-title>
     </v-list-item>
-    <v-list-item>
+    <v-list-item link href="#projects">
       <v-list-item-title>{{ $t("Projects") }}</v-list-item-title>
     </v-list-item>
     <v-list-item link href="/contact">

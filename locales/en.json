@@ -6,6 +6,8 @@
     "Currently": "Currently",
     "Developer": "Developer",
     "Experiences": "Experiences",
+    "ExploreProject": "Explore project",
+    "From": "From",
     "FrontEnd": "FrontEnd",
     "FullStack": "FullStack",
     "Home": "Home",
@@ -14,5 +16,7 @@
     "PresentationText": "Since my professional start as a software enginner in 2020, I've been driven by curiosity and constant improvement, thriving in collaborative environments and delivering impactful solutions. With each project, I aim to create meaningful results that balance creativity and efficiency.",
     "Projects": "Projects",
     "Resume": "Resume",
-    "Skills": "Skills"
+    "SeeTheProject": "See the project",
+    "Skills": "Skills",
+    "To": "To"
 }
