@@ -1,11 +1,11 @@
 <script setup>
 import en from "@/assets/icons/language/en.png";
 import pt from "@/assets/icons/language/pt.png";
-const { locale, setLocale } = useI18n();
+const { locale } = useI18n();
 const lang = ref(locale.value);
 
 watch(lang, (newLang) => {
-  setLocale(newLang);
+  locale.value = newLang;
 });
 </script>
 

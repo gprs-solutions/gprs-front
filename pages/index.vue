@@ -8,5 +8,6 @@
     <Projects></Projects>
     <EffectText></EffectText>
     <Skills></Skills>
+    <Footer></Footer>
   </div>
 </template>
