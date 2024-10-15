@@ -8,7 +8,7 @@ createObserver(text, isTextVisible);
 <template>
   <section id="effectText">
     <h2 :class="['text-center', 'font-italic', TextClass]" ref="text">
-      “ {{ $t("EffectText") }} ”
+      {{ $t("EffectText") }}
     </h2>
   </section>
 </template>
