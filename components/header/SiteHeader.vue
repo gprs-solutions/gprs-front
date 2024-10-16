@@ -5,7 +5,7 @@ import { useTheme } from "vuetify";
 const themeSettings = useTheme();
 const isDark = ref(false);
 const drawer = ref(false);
-const windowWidth = ref(0);
+const windowWidth = ref(window.innerWidth);
 
 const isMobile = computed(() => {
   return windowWidth.value <= 600;
