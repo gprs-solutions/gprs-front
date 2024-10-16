@@ -13,7 +13,6 @@ const presentationTitleClass = computed(() =>
 const presentationContentClass = computed(() =>
   isPresentationContentVisible.value ? "fadeInRight" : ""
 );
-
 createObserver(presentationTitle, isPresentationTitleVisible);
 createObserver(presentationContent, isPresentationContentVisible);
 </script>

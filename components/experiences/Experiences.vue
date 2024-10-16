@@ -23,7 +23,7 @@ createObserver(expCards, isExpCardsVisible);
 const experienceStore = useExperienceStore();
 const isSuccessful = computed(() => experienceStore.isSuccessful);
 
-const windowWidth = ref(window.innerWidth);
+const windowWidth = ref(0);
 
 const showArrows = computed(() => windowWidth.value > 600);
 
@@ -32,11 +32,15 @@ const handleResize = () => {
 };
 
 onBeforeMount(() => {
-  window.addEventListener("resize", handleResize);
   experienceStore.fetchExps();
 });
 
+onMounted(() => {
+  window.addEventListener("resize", handleResize);
+});
+
 onUnmounted(() => {
+  windowWidth.value = window.innerWidth;
   window.removeEventListener("resize", handleResize);
 });
 

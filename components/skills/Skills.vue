@@ -6,7 +6,7 @@ const skillStore = useSkillStore();
 const isSuccessful = computed(() => skillStore.isSuccessful);
 const skills = computed(() => skillStore.skillsInfo);
 
-const windowWidth = ref(window.innerWidth);
+const windowWidth = ref(0);
 
 const skillTitle = ref(null);
 const isskillTitleVisible = ref(false);
@@ -30,6 +30,10 @@ const handleResize = () => {
 
 onBeforeMount(async () => {
   await skillStore.fetchSkills();
+});
+
+onMounted(async () => {
+  windowWidth.value = window.innerWidth;
   window.addEventListener("resize", handleResize);
 });
 

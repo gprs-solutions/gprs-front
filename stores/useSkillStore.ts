@@ -15,7 +15,6 @@ export const useSkillStore = defineStore("skills", {
         const { data, error } = await useFetch(
           "http://localhost:8030/api/skill"
         );
-
         const result = data.value;
 
         if (result.success !== true || result.status !== 200) {
