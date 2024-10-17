@@ -6,5 +6,8 @@
       <Experiences></Experiences>
     </div>
     <Projects></Projects>
+    <EffectText></EffectText>
+    <Skills></Skills>
+    <Footer></Footer>
   </div>
 </template>

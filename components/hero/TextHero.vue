@@ -1,6 +1,6 @@
 <script setup>
 const { locale } = useI18n();
-const lang = ref(locale.value);
+const lang = computed(() => locale.value);
 
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
@@ -9,9 +9,6 @@ let activeHeroText = ref("");
 let defaultTypingTime = 150;
 
 const blinkingCursor = ref(true);
-setInterval(() => {
-  blinkingCursor.value = !blinkingCursor.value;
-}, 500);
 
 const typing = async () => {
   for (let i = 0; i < heroTexts.length; i++) {
@@ -44,6 +41,10 @@ function sleep(ms) {
 
 onMounted(() => {
   typing();
+
+  setInterval(() => {
+    blinkingCursor.value = !blinkingCursor.value;
+  }, 500);
 });
 </script>
 
