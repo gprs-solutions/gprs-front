@@ -70,6 +70,8 @@ const submit = async () => {
             <v-text-field
               v-model="name"
               :rules="nameRules"
+              :readonly="isLoading"
+              :loading="isLoading"
               class="mb-2"
               :label="$t('Name')"
               :placeholder="$t('WriteYourName')"
@@ -78,6 +80,8 @@ const submit = async () => {
             <v-text-field
               v-model="email"
               :rules="emailRules"
+              :readonly="isLoading"
+              :loading="isLoading"
               class="mb-2"
               :label="$t('Email')"
               :placeholder="$t('WriteYourEmail')"
@@ -86,6 +90,8 @@ const submit = async () => {
             <v-textarea
               v-model="message"
               :rules="messageRules"
+              :readonly="isLoading"
+              :loading="isLoading"
               class="mb-2"
               :label="$t('Message')"
               :placeholder="$t('WriteAMessage')"
