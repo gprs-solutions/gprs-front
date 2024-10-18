@@ -8,6 +8,7 @@
     <Projects></Projects>
     <EffectText></EffectText>
     <Skills></Skills>
+    <Contact></Contact>
     <Footer></Footer>
   </div>
 </template>
