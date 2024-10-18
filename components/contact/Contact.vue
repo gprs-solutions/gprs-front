@@ -42,7 +42,19 @@ const messageRules = [
   (value) => !!value || t("RequiredField", { field: t("Message") }),
 ];
 
-const isFormValid = ref(false);
+const contactForm = ref(null);
+const isLoading = ref(false);
+
+const submit = async () => {
+  isLoading.value = true;
+  if (contactForm.value) {
+    const isValid = await contactForm.value.validate();
+    if (isValid.valid) {
+      alert("Form is valid");
+    }
+  }
+  isLoading.value = false;
+};
 </script>
 <template>
   <section id="contact">
@@ -54,7 +66,7 @@ const isFormValid = ref(false);
       <v-col cols="1" sm="3" md="4" lg="4"></v-col>
       <v-col cols="10" sm="6" md="4" lg="4">
         <v-card class="pa-8">
-          <v-form v-model="isFormValid">
+          <v-form ref="contactForm">
             <v-text-field
               v-model="name"
               :rules="nameRules"
@@ -80,7 +92,9 @@ const isFormValid = ref(false);
             >
             </v-textarea>
 
-            <v-btn color="success" block> {{ $t("SendMessage") }} </v-btn>
+            <v-btn color="success" @click="submit()" :loading="isLoading" block>
+              {{ $t("SendMessage") }}
+            </v-btn>
           </v-form>
         </v-card>
       </v-col>
