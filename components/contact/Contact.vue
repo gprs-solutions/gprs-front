@@ -50,7 +50,11 @@ const submit = async () => {
   if (contactForm.value) {
     const isValid = await contactForm.value.validate();
     if (isValid.valid) {
-      alert("Form is valid");
+      await contactStore.createContact();
+
+      if (contactStore.isSuccessful) {
+        await contactForm.value.reset();
+      }
     }
   }
   isLoading.value = false;

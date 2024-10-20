@@ -6,18 +6,28 @@ export const useContactStore = defineStore("contact", {
     email: "",
     name: "",
     message: "",
+    showSnackbar: false,
   }),
   getters: {
     isSuccessful: (state) => state.success,
     getEmail: (state) => state.email,
     getName: (state) => state.name,
     getMessage: (state) => state.message,
+    getShowSnackBar: (state) => state.showSnackbar,
   },
   actions: {
-    async fetchSkills() {
+    async createContact() {
       try {
         const { data, error } = await useFetch(
-          "http://localhost:8030/api/skill"
+          "http://localhost:8030/api/contact",
+          {
+            method: "POST",
+            body: JSON.stringify({
+              name: this.name,
+              email: this.email,
+              message: this.message,
+            }),
+          }
         );
         const result = data.value;
 
@@ -26,10 +36,10 @@ export const useContactStore = defineStore("contact", {
         }
 
         this.success = true;
-        this.skills = result.data;
       } catch (err) {
         this.success = false;
-        this.skills = [];
+      } finally {
+        this.showSnackbar = true;
       }
     },
     setEmail(v) {
@@ -40,6 +50,9 @@ export const useContactStore = defineStore("contact", {
     },
     setMessage(v) {
       this.message = v;
+    },
+    setShowSnackbar(v) {
+      this.showSnackbar = v;
     },
   },
 });
