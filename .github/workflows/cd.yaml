@@ -44,6 +44,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: app-build
+        path: ./app-build/
     
     - name: Upload application to server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
