@@ -46,10 +46,14 @@ jobs:
         name: app-build
         path: ./app-build/
     
-    - name: Upload application to server
+    - name: Move configuration file to app folder
+      run: mv ./.htaccess ./app-build/
+    
+    - name: Sync code with server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ vars.FTP_SERVER }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./app-build/
+        server-dir: public_html/
