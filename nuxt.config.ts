@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       { code: "pt", iso: "pt-BR", name: "Portuguese", file: "pt-BR.json" },
     ],
     defaultLocale: "pt",
-    lazy: true,
+    lazy: false,
   },
   build: {
     transpile: ["vuetify"],
