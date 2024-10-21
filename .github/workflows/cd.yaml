@@ -1,9 +1,9 @@
-name: 🚀 Deployment to Prod
+name: 🚀 Deployment to PROD
 
 on:
-  push:
-    branches:
-      [main]
+  release:
+    types: 
+      - published
 
 jobs:
   build:
@@ -26,6 +26,6 @@ jobs:
     - name: 📝 Deploy application
       uses: ./.github/actions/deploy
       with:
-        ftp-server: ${{ vars.FTP_SERVER_DEV }}
-        ftp-user: ${{ secrets.FTP_USER_DEV }}
-        ftp-password: ${{ secrets.FTP_PASSWORD_DEV }}
+        ftp-server: ${{ vars.FTP_SERVER }}
+        ftp-user: ${{ secrets.FTP_USER }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
