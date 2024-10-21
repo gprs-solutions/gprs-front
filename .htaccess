@@ -9,11 +9,10 @@
   RewriteRule ^ /index.html [L]
 </IfModule>
 
-# Caching for static files (optional, adjust times as necessary)
-<FilesMatch "\.(js|css|html|jpg|jpeg|png|gif|svg|ico|webp)$">
-  ExpiresActive On
-  ExpiresDefault "access plus 1 week"
-</FilesMatch>
+<IfModule mod_headers.c>
+  Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+  Header set Pragma "no-cache"
+</IfModule>
 
 # Enable Gzip compression for text-based assets
 <IfModule mod_deflate.c>
