@@ -4,7 +4,7 @@ import pt from "@/assets/resume/resume-pt.pdf";
 import heroImg from "@/assets/custom/placeholder.png";
 
 const { locale } = useI18n();
-const activeResume = ref(locale.value === "en" ? en : pt);
+const activeResume = computed(() => (locale.value === "en" ? en : pt));
 </script>
 
 <template>
