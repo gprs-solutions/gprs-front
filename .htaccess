@@ -1,20 +1,17 @@
 # Enable URL rewriting
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # If the request is not for an existing file, directory, or symbolic link, serve index.html
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule ^ /index.html [L]
+# If the request is not for an existing file, directory, or symbolic link, serve index.html
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^ /index.html [L]
 </IfModule>
 
 <IfModule mod_headers.c>
   Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
   Header set Pragma "no-cache"
-</IfModule>
-
-# Enable Gzip compression for text-based assets
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
 </IfModule>
