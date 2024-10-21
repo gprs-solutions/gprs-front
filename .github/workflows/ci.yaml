@@ -1,4 +1,4 @@
-name: CI
+name: 🛠️ CI
 
 on:
   pull_request:
@@ -9,19 +9,18 @@ jobs:
   code-style:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: 📥 Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up NodeJS
+      - name: ⚙️ Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: |
           rm -rf ./package-lock.json
           npm install
           
-      - name: Run ESLint
-        run: npm run lint   
-  
+      - name: 🔍 Run ESLint
+        run: npm run lint
