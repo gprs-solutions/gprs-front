@@ -1,4 +1,4 @@
-name: 🚀 Deployment to DEV
+name: 🚀 Deployment to Prod
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: 🚀 Deployment to dev
+name: 🚀 Deployment to DEV
 
 on:
   release:
