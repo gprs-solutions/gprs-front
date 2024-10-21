@@ -1,9 +1,9 @@
-name: 🚀 Deployment to DEV
+name: 🚀 Deployment to dev
 
 on:
-  push:
-    branches:
-      [main]
+  release:
+    types: 
+      - published
 
 jobs:
   build:

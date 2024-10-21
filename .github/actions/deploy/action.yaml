@@ -1,0 +1,38 @@
+name: 🚀 Deployment
+
+description: Upload files to FTP server
+
+inputs:
+  ftp-server:
+    description: 'The FTP server URL'
+    required: true
+  ftp-user:
+    description: 'The FTP username'
+    required: true
+  ftp-password:
+    description: 'The FTP password'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+
+    - name: 📦 Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: app-build
+        path: ./app-build/
+    
+    - name: 📝 Move configuration file to app folder
+      shell: bash
+      run: mv ./.htaccess ./app-build/
+    
+    - name: 🔄 Sync code with server
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ inputs.ftp-server }}
+        username: ${{ inputs.ftp-user }}
+        password: ${{ inputs.ftp-password }}
+        local-dir: ./app-build/
