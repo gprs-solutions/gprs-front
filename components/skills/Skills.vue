@@ -56,7 +56,7 @@ onUnmounted(() => {
       ref="skillCarrousel"
     >
       <v-slide-group
-        v-if="isSuccessful"
+        v-if="isSuccessful && skills.length > 0"
         class="pa-4"
         selected-class="bg-success"
         :show-arrows="showArrows"

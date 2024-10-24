@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useRuntimeConfig } from "#app";
 
 export const useContactStore = defineStore("contact", {
   state: () => ({
@@ -18,8 +19,9 @@ export const useContactStore = defineStore("contact", {
   actions: {
     async createContact() {
       try {
+        const config = useRuntimeConfig();
         const { data, error } = await useFetch(
-          "http://localhost:8030/api/contact",
+          config.public.apiUrl + "/contact",
           {
             method: "POST",
             body: JSON.stringify({

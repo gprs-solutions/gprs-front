@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useRuntimeConfig } from "#app";
 
 export const useProjectStore = defineStore("projects", {
   state: () => ({
@@ -16,9 +17,8 @@ export const useProjectStore = defineStore("projects", {
   actions: {
     async fetchProjects() {
       try {
-        const { data, error } = await useFetch(
-          "http://localhost:8030/api/proj"
-        );
+        const config = useRuntimeConfig();
+        const { data, error } = await useFetch(config.public.apiUrl + "/proj");
 
         const result = data.value;
 

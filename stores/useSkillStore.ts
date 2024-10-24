@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useRuntimeConfig } from "#app";
 
 export const useSkillStore = defineStore("skills", {
   state: () => ({
@@ -12,9 +13,8 @@ export const useSkillStore = defineStore("skills", {
   actions: {
     async fetchSkills() {
       try {
-        const { data, error } = await useFetch(
-          "http://localhost:8030/api/skill"
-        );
+        const config = useRuntimeConfig();
+        const { data, error } = await useFetch(config.public.apiUrl + "/skill");
         const result = data.value;
 
         if (result.success !== true || result.status !== 200) {

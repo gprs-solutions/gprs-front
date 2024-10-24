@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useRuntimeConfig } from "#app";
 
 export const useExperienceStore = defineStore("experiences", {
   state: () => ({
@@ -14,7 +15,9 @@ export const useExperienceStore = defineStore("experiences", {
   actions: {
     async fetchExps() {
       try {
-        const { data, error } = await useFetch("http://localhost:8030/api/exp");
+        const config = useRuntimeConfig();
+        console.log(config);
+        const { data, error } = await useFetch(config.public.apiUrl + "/exp");
 
         const result = data.value;
 

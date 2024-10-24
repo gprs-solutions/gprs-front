@@ -2,6 +2,11 @@ name: 🏗️ Nuxt build and upload
 
 description: Build and upload app files
 
+inputs:
+  API_URL:
+    description: 'The application API url'
+    required: true
+
 runs:
   using: 'composite'
   steps:
@@ -20,6 +25,12 @@ runs:
     - name: 📦 Install dependencies
       shell: bash
       run: npm install
+
+    - name: 🏗️ Build env file
+      shell: bash
+      run: |
+        touch .env
+        echo "API_URL=${{ inputs.API_URL }}" >> .env 
 
     - name: 🏗️ Build application
       shell: bash
