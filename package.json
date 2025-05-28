@@ -17,7 +17,7 @@
     "nuxt": "^3.13.0",
     "pinia": "^2.2.4",
     "vue": "latest",
-    "vue-i18n": "^10.0.0",
+    "vue-i18n": "^10.0.7",
     "vue-router": "latest",
     "vuetify": "^3.7.2"
   },
